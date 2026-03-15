@@ -1,0 +1,10 @@
+# Fixture set name must match model's table_name.
+# Rails can't auto-resolve associations for non-standard model names,
+# so we set_fixture_class in test_helper and use association labels directly.
+jakob_snake:
+  user: jakob
+  mini_app: snake_game
+  data: '{"level": 3}'
+  high_score: 250
+  play_count: 5
+  last_played_at: <%= 1.day.ago.to_fs(:db) %>

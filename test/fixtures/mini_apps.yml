@@ -1,0 +1,21 @@
+snake_game:
+  slug: snake-game
+  name: Snake Game
+  description: Classic snake
+  author: Jakob
+  category: game
+  is_published: true
+  play_count: 10
+  version: "0.1.0"
+  route_prefix: /apps/snake-game
+
+unpublished_app:
+  slug: wip-app
+  name: Work In Progress
+  description: Not ready yet
+  author: Isa
+  category: tool
+  is_published: false
+  play_count: 0
+  version: "0.0.1"
+  route_prefix: /apps/wip-app

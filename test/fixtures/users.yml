@@ -1,0 +1,11 @@
+jakob:
+  username: jakob
+  email: jakob@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  total_score: 100
+
+isa:
+  username: isa
+  email: isa@example.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password123') %>
+  total_score: 50
