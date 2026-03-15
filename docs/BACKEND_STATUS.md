@@ -152,16 +152,16 @@ Indexed on `[mini_app_id, score DESC]` for fast leaderboard queries.
 
 ---
 
-## PlatformAPI Service
+## PlatformApi Service
 
 Backend-internal service used by engines and controllers:
 
 ```ruby
-PlatformAPI.submit_score(user:, app_slug:, score:, metadata: {})
-PlatformAPI.leaderboard(app_slug:, limit: 10)
-PlatformAPI.save_data(user:, app_slug:, data:)
-PlatformAPI.load_data(user:, app_slug:)
-PlatformAPI.notify(user:, message:, type:)  # logs only for now
+PlatformApi.submit_score(user:, app_slug:, score:, metadata: {})
+PlatformApi.leaderboard(app_slug:, limit: 10)
+PlatformApi.save_data(user:, app_slug:, data:)
+PlatformApi.load_data(user:, app_slug:)
+PlatformApi.notify(user:, message:, type:)  # logs only for now
 ```
 
 `submit_score` also broadcasts to ActionCable.
@@ -245,6 +245,6 @@ All errors follow a consistent format:
 
 - **No avatar upload** — column exists, `PUT /users/me` accepts `avatar_url` but no file upload
 - **No `total_score` aggregation** — column exists, not auto-updated
-- **No notification system** — `PlatformAPI.notify` just logs
+- **No notification system** — `PlatformApi.notify` just logs
 - **Tic-Tac-Toe / Memory Cards engines** — seeded but not built
 - **No password reset API endpoint** — Devise mailer is configured but no API route exposed
