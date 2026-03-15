@@ -4,7 +4,7 @@ module Api
       skip_before_action :authenticate_user!
 
       def index
-        entries = PlatformAPI.leaderboard(
+        entries = PlatformApi.leaderboard(
           app_slug: params[:app_slug],
           limit: (params[:limit] || 10).to_i
         )

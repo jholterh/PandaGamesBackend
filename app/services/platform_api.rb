@@ -1,4 +1,4 @@
-module PlatformAPI
+module PlatformApi
   def self.submit_score(user:, app_slug:, score:, metadata: {})
     app = MiniApp.find_by!(slug: app_slug)
     LeaderboardEntry.create!(
@@ -36,7 +36,7 @@ module PlatformAPI
 
   def self.notify(user:, message:, type: :info)
     # Placeholder — will be implemented with ActionCable or notifications system
-    Rails.logger.info("[PlatformAPI.notify] user=#{user.id} type=#{type} message=#{message}")
+    Rails.logger.info("[PlatformApi.notify] user=#{user.id} type=#{type} message=#{message}")
   end
 
   def self.update_high_score(user:, app:, score:)

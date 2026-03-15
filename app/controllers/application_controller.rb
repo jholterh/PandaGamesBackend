@@ -1,11 +1,21 @@
-class ApplicationController < ActionController::Base
-  # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
-  allow_browser versions: :modern
-
-  # Changes to the importmap will invalidate the etag for HTML responses
-  stale_when_importmap_changes
-
+class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def authenticate_user!
+    render json: { error: "Unauthorized" }, status: :unauthorized unless current_user
+  end
+
+  def current_user
+    @current_user ||= begin
+      token = request.headers["Authorization"]&.split(" ")&.last
+      return nil unless token
+
+      payload = JwtService.decode(token)
+      return nil unless payload
+
+      User.find_by(id: payload[:sub])
+    end
+  end
 
   protected
 

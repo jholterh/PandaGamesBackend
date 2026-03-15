@@ -2,7 +2,7 @@ module Api
   module V1
     class ScoresController < BaseController
       def create
-        entry = PlatformAPI.submit_score(
+        entry = PlatformApi.submit_score(
           user: current_user,
           app_slug: params[:app_slug],
           score: params[:score].to_i,
