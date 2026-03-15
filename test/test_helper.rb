@@ -7,6 +7,9 @@ module ActiveSupport
     # Run tests in parallel with specified workers
     parallelize(workers: :number_of_processors)
 
+    # Map fixture set names to model classes for non-standard table names
+    set_fixture_class user_app_data: UserAppData
+
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
     fixtures :all
 

@@ -1,0 +1,17 @@
+<div class="w-full">
+  <h1 class="text-3xl font-bold mb-2">Mini-Apps</h1>
+  <p class="text-gray-500 mb-8">Choose a game or tool to play.</p>
+
+  <% if @mini_apps.any? %>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <% @mini_apps.each do |app| %>
+        <%= render AppCardComponent.new(mini_app: app) %>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="text-center py-20 text-gray-400">
+      <p class="text-5xl mb-4">🐼</p>
+      <p class="text-lg">No mini-apps published yet. Build one!</p>
+    </div>
+  <% end %>
+</div>
