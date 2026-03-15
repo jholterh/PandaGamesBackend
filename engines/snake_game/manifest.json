@@ -1,0 +1,14 @@
+{
+  "id": "snake-game",
+  "name": "Snake Game",
+  "version": "0.1.0",
+  "author": "Jakob",
+  "description": "Classic snake game. Eat, grow, don't crash into yourself!",
+  "category": "game",
+  "tags": ["arcade", "solo", "keyboard"],
+  "thumbnail": null,
+  "route_prefix": "/apps/snake-game",
+  "permissions": ["scores", "storage"],
+  "supports_multiplayer": false,
+  "min_platform_version": "1.0.0"
+}

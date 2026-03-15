@@ -1,0 +1,14 @@
+{
+  "id": "TEMPLATE_SLUG",
+  "name": "TEMPLATE_NAME",
+  "version": "0.1.0",
+  "author": "YOUR_NAME",
+  "description": "A short description of this mini-app.",
+  "category": "game",
+  "tags": [],
+  "thumbnail": null,
+  "route_prefix": "/apps/TEMPLATE_SLUG",
+  "permissions": ["scores", "storage"],
+  "supports_multiplayer": false,
+  "min_platform_version": "1.0.0"
+}
